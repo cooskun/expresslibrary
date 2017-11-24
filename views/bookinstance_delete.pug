@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title} : #{bookinstance.book.title}
+  p #[strong Status] : #{bookinstance.status}
+  p #[strong Imprint] : #{bookinstance.imprint}
+  p #[strong Due back] : #{bookinstance.due_back_formatted}
+
+  form(action="" method="POST")
+    .form-group
+      input#bookinstanceid.form-control(type='hidden', name='bookinstanceid' value=bookinstance._id)
+    button.btn.btn-primary(type="submit") Delete Book Instance

@@ -1,0 +1,27 @@
+{
+  "name": "mdn-local-libray-tutorial",
+  "description": "It is a tutorial about MEAN Stack Development by MDN",
+  "main": "app.js",
+  "authors": [
+    "coskunbaris <coskun.bris@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Node",
+    "Express",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}

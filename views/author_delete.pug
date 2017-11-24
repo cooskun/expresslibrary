@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{title} : #{author.name}
+  p= author.lifespan
+  
+  if author_books.length
+  
+    p #[strong Delete the following books before delete this author]
+    
+    div(style='margin: 20px 0 0 20px;')
+      
+      h4 Books
+      
+      dl
+      each book in author_books
+        dt
+          a(href=book.url) #{book.title}
+        dd #{book.summary}
+        
+  else
+    p Do you really want to delete this Author?
+    
+    form(action="" method="POST")
+      .form-group
+        input#authorid.form-control(type='hidden', name='authorid' value=author._id required)
+      button.btn.btn-primary(type="submit") Delete

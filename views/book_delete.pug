@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Delete book : #{book.title}
+  p #[strong Author] : #{book.author.name}
+  p #[strong Genre] : #{book.genre.name}
+  
+  if (bookinstance > 0)
+    p Delete following bookinstance before deleting this book
+    
+    ul
+    each val in bookinstance
+      li #{val.book.title} - #{val.imprint} - #{val.status} - #{val.due_back_formatted}
+  else
+    p Do you want really delete this book
+  
+    form(action="" method="POST")
+      .form-group
+        input#bookid.form-control(type='hidden', name='bookid' value=book._id)
+      button.btn.btn-primary(type="submit") Delete
